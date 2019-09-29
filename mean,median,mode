@@ -1,0 +1,30 @@
+# given an array and its length calculate mean, median and mode
+import numpy as np
+a=int(input())  #accepting length of array
+l=list(map(int,input().split())) #accepting the array
+s=0
+d={}
+          
+#mean and mode
+for i in l:
+    s=s+i
+    if i not in d.keys():
+        d[i]=1
+    else:
+        d[i]=d[i]+1
+
+mean=round(s/a,1)
+
+#mode
+t=max(d.values())
+g=[]
+for i in d.keys():
+    if d[i]==t:
+        g.append(i)
+
+mode=min(g)        
+
+
+print(mean)
+print(np.median(l)) 
+print(mode)
